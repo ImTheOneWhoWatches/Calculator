@@ -1,82 +1,181 @@
 import time
 import math
+import sympy as sp
+
 
 def arithmetic_operations():
-    while True:
+   while True:
         print("Arithmetic Operations:")
-        print("1. ADD")
-        print("2. SUBTRACT")
-        print("3. MULTIPLY")
-        print("4. DIVIDE")
-        print("5. Back to main menu")
+        print("1. Addition")
+        print("2. Subtraction")
+        print("3. Multiplication")
+        print("4. Division")
+        print("5. Modulus")
+        print("6. Floor Division")
+        print("7. Back to main menu")
 
         operation = input("Enter your choice: ")
 
-        if operation == "1":  # PERFORM ADDITION
-            num1 = input("Enter first number: ")
-            num2 = input("Enter second number: ")
-            print("The sum of your addition problem is " + str(int(num1) + int(num2)))
-        elif operation == "2":  # PERFORM SUBTRACTION
-            num1 = input("Enter first number: ")
-            num2 = input("Enter second number: ")
-            print("The difference of your subtraction problem is " + str(int(num1) - int(num2)))
-        elif operation == "3":  # PERFORM MULTIPLICATION
-            num1 = input("Enter first number: ")
-            num2 = input("Enter second number: ")
-            print("The product of your multiplication problem is " + str(int(num1) * int(num2)))
-        elif operation == "4":  # PERFORM DIVISION
-            num1 = input("Enter first number: ")
-            num2 = input("Enter second number: ")
-            print("The result of your division problem is " + str(int(num1) / int(num2)))
-        elif operation == "5":  # Back to main menu
+        if operation == "1": 
+            num1 = int(input("Enter first number: "))
+            num2 = int(input("Enter second number: "))
+            print(f"The sum of {num1} and {num2} is {num1 + num2}")
+        elif operation == "2":
+            num1 = int(input("Enter first number: "))
+            num2 = int(input("Enter second number: "))
+            print(f"The difference between {num1} and {num2} is {num1 - num2}")
+        elif operation == "3":
+            num1 = int(input("Enter first number: "))
+            num2 = int(input("Enter second number: "))
+            print(f"The product of {num1} and {num2} is {num1 * num2}")
+        elif operation == "4":
+            num1 = int(input("Enter numerator: "))
+            num2 = int(input("Enter denominator: "))
+            if num2 != 0:
+                print(f"The result of {num1} divided by {num2} is {num1 / num2}")
+            else:
+                print("Error: Cannot divide by zero")
+        elif operation == "5":
+            num1 = int(input("Enter first number: "))
+            num2 = int(input("Enter second number: "))
+            print(f"The remainder of {num1} divided by {num2} is {num1 % num2}")
+        elif operation == "6":
+            num1 = int(input("Enter numerator: "))
+            num2 = int(input("Enter denominator: "))
+            if num2 != 0:
+                print(f"The result of {num1} divided by {num2} (floor division) is {num1 // num2}")
+            else:
+                print("Error: Cannot divide by zero")
+        elif operation == "7":
             break
         else:
             print("Invalid Entry")
 
-        time.sleep(2)  # Add a short delay before displaying the menu again
+        time.sleep(2)
 
 def algebra_operations():
     while True:
         print("Algebraic Operations:")
-        print("1. Y = MX + B")
-        print("2. Back to main menu")
+        print("1. Solve Linear Equation (ax + b = c)")
+        print("2. Solve Quadratic Equation (ax^2 + bx + c = 0)")
+        print("3. Solve Cubic Equation (ax^3 + bx^2 + cx + d = 0)")
+        print("4. Solve Exponential Equation (a^x = b)")
+        print("5. Solve Logarithmic Equation (log_a(x) = b)")
+        print("6. Y = MX + B")
+        print("7. Simplify Algebraic Expression")
+        print("8. Back to main menu")
 
         operation = input("Enter your choice: ")
 
-        if operation == "1":  # Y = mx + b
+        if operation == "1": 
+            a = int(input("Enter the coefficient of x: "))
+            b = int(input("Enter the constant term: "))
+            c = int(input("Enter the constant on the right side: "))
+            if a != 0:
+                x = (c - b) / a
+                print(f"The solution to the equation {a}x + {b} = {c} is x = {x}")
+            else:
+                print("Error: 'a' cannot be zero")
+        elif operation == "2":
+            a = int(input("Enter the coefficient of x^2 (a): "))
+            b = int(input("Enter the coefficient of x (b): "))
+            c = int(input("Enter the constant term (c): "))
+
+            # Calculate the discriminant
+            discriminant = b**2 - 4*a*c
+
+            if a != 0:
+                if discriminant > 0:
+                    # Two real and distinct roots
+                    root1 = (-b + math.sqrt(discriminant)) / (2*a)
+                    root2 = (-b - math.sqrt(discriminant)) / (2*a)
+                    print(f"The roots of the quadratic equation are: {root1} and {root2}")
+                elif discriminant == 0:
+                    # One real root (repeated)
+                    root = -b / (2*a)
+                    print(f"The root of the quadratic equation is: {root}")
+                else:
+                    # No real roots (complex roots)
+                    real_part = -b / (2*a)
+                    imaginary_part = math.sqrt(abs(discriminant)) / (2*a)
+                    print(f"The roots of the quadratic equation are complex: {real_part} + {imaginary_part}i and {real_part} - {imaginary_part}i")
+            else:
+                print("Invalid entry")
+        elif operation == "3":
+            a = int(input("Enter the coefficient of x^3 (a): "))
+            b = int(input("Enter the coefficient of x^2 (b): "))
+            c = int(input("Enter the coefficient of x (c): "))
+            d = int(input("Enter the constant term (d): "))
+
+            # Cardano's method for solving cubic equations
+            p = c / a - (b**2) / (3 * a**2)
+            q = d / a - (b * c) / (3 * a**2) + (2 * b**3) / (27 * a**3)
+            delta = q**2 / 4 + p**3 / 27
+
+            if delta > 0:
+                # One real root and two complex roots
+                u = (-q / 2 + math.sqrt(delta))**(1/3)
+                v = (-q / 2 - math.sqrt(delta))**(1/3)
+                root1 = u + v - b / (3 * a)
+                print(f"The real root of the cubic equation is: {root1}")
+            elif delta == 0:
+                # One real root (repeated)
+                if q >= 0:
+                    root = -2 * (q / 2)**(1/3) - b / (3 * a)
+                else:
+                    root = 2 * abs(q / 2)**(1/3) - b / (3 * a)
+                print(f"The real root of the cubic equation is: {root}")
+            else:
+                # Three real roots
+                t = -q / 2
+                phi = math.acos(t / math.sqrt(-p**3 / 27))
+                root1 = 2 * math.sqrt(-p / 3) * math.cos(phi / 3) - b / (3 * a)
+                root2 = 2 * math.sqrt(-p / 3) * math.cos((phi + 2 * math.pi) / 3) - b / (3 * a)
+                root3 = 2 * math.sqrt(-p / 3) * math.cos((phi + 4 * math.pi) / 3) - b / (3 * a)
+                print(f"The real roots of the cubic equation are: {root1}, {root2}, and {root3}")
+        elif operation == "4":
+            a = int(input("Enter the base (a): "))
+            b = int(input("Enter the constant term (b): "))
+
+            if a > 0 and a != 1:  # Ensure a is positive and not equal to 1
+                x = math.log(b) / math.log(a)
+                print(f"The solution to the exponential equation {a}^x = {b} is x = {x}")
+            else:
+                print("Error: Base 'a' must be positive and not equal to 1")
+        elif operation == "5":
+            a = int(input("Enter the base of the logarithm (a): "))
+            b = int(input("Enter the constant term (b): "))
+
+            if a > 0 and a != 1:  # Ensure a is positive and not equal to 1
+                x = a ** b
+                print(f"The solution to the logarithmic equation log_{a}(x) = {b} is x = {x}")
+            else:
+                print("Error: Base 'a' must be positive and not equal to 1")
+        elif operation == "6":
             m = int(input("Enter the value of m: "))
             x = int(input("Enter the value of x: "))
             b = int(input("Enter the value of b: "))
             print(f"The value of y = {m}x + {b} is: {m * x + b}")
-        elif operation == "2":  # Back to main menu
+        elif operation == "7":
+            print("EXAMPLE: 3 * x**2 + 2 * x + 1 / 9 ")
+            expression_str = input("Enter the algebraic expression: ")
+    
+            try:
+                expression = sp.sympify(expression_str)  # Convert the input string to a SymPy expression object
+                simplified_expression = sp.simplify(expression)  # Simplify the expression
+
+                print("Original expression:", expression)
+                print("Simplified expression:", simplified_expression)
+            except sp.SympifyError:
+                print("Invalid expression: Please enter a valid algebraic expression.")
+
+        elif operation == "8":
             break
         else:
             print("Invalid Entry")
 
-        time.sleep(2)  # Add a short delay before displaying the menu again
+            time.sleep(2)
 
-def mathematical_operations():
-    while True:
-        print("Mathematical Operations:")
-        print("1. SQUARE ROOT")
-        print("2. POWER")
-        print("3. Back to main menu")
-
-        operation = input("Enter your choice: ")
-
-        if operation == "1":  # PERFORM SQUARE ROOT
-            num = int(input("Enter number: "))
-            print("The square root of your problem is %f" % (math.sqrt(num)))
-        elif operation == "2":  # PERFORM TO THE POWER OF
-            num = int(input("Enter first number: "))
-            num2 = int(input("Enter second number: "))
-            print("The result of your problem is %d" % (math.pow(num, num2)))
-        elif operation == "3":  # Back to main menu
-            break
-        else:
-            print("Invalid Entry")
-
-        time.sleep(2)  # Add a short delay before displaying the menu again
 def Triginometry_Operations():
     while True:
         print("Trigonometry Operations:")
