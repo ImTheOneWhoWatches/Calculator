@@ -1,6 +1,7 @@
 A simple Calculator
-No Gui
-![image](https://github.com/ImTheOneWhoWatches/Calculator/assets/162903308/10140b57-ca25-4e3c-a89c-d5b0bb7e7fbf)
+No Gui (Yet, I might add it in a future project)
+![image](https://github.com/ImTheOneWhoWatches/Calculator/assets/162903308/6466149a-ede7-4ce2-a32d-384bc42b64eb)
+
 
 How to Download
 ++++++++++++++++
