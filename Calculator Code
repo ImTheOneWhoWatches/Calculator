@@ -1,0 +1,45 @@
+import time
+import math
+
+while True:
+    print("Select an operation to perform:")
+    print("1. ADD")
+    print("2. SUBTRACT")
+    print("3. MULTIPLY")
+    print("4. DIVIDE")
+    print("5. SQUARE ROOT")
+    print("6. POWER")
+    print("7. EXIT")
+
+    operation = input("Enter your choice: ")
+
+    if operation == "1":  # PERFORM ADDITION
+        num1 = input("Enter first number: ")
+        num2 = input("Enter second number: ")
+        print("The sum of your addition problem is " + str(int(num1) + int(num2)))
+    elif operation == "2":  # PERFORM SUBTRACTION
+        num1 = input("Enter first number: ")
+        num2 = input("Enter second number: ")
+        print("The difference of your subtraction problem is " + str(int(num1) - int(num2)))
+    elif operation == "3":  # PERFORM MULTIPLICATION
+        num1 = input("Enter first number: ")
+        num2 = input("Enter second number: ")
+        print("The product of your multiplication problem is " + str(int(num1) * int(num2)))
+    elif operation == "4":  # PERFORM DIVISION
+        num1 = input("Enter first number: ")
+        num2 = input("Enter second number: ")
+        print("The result of your division problem is " + str(int(num1) / int(num2)))
+    elif operation == "5":  # PERFORM SQUARE ROOT
+        num = int(input("Enter number: "))
+        print("The square root of your problem is %f" % (math.sqrt(num)))
+    elif operation == "6":  # PERFORM TO THE POWER OF
+        num = int(input("Enter first number: "))
+        num2 = int(input("Enter second number: "))
+        print("The result of your problem is %d" % (math.pow(num, num2)))
+    elif operation == "7":  # EXIT
+        print("Exiting the calculator...")
+        break  # Exit the loop
+    else:
+        print("Invalid Entry")
+
+    time.sleep(2)  # Add a short delay before displaying the menu again
