@@ -1,52 +1,153 @@
 import time
 import math
 
+def arithmetic_operations():
+    while True:
+        print("Arithmetic Operations:")
+        print("1. ADD")
+        print("2. SUBTRACT")
+        print("3. MULTIPLY")
+        print("4. DIVIDE")
+        print("5. Back to main menu")
+
+        operation = input("Enter your choice: ")
+
+        if operation == "1":  # PERFORM ADDITION
+            num1 = input("Enter first number: ")
+            num2 = input("Enter second number: ")
+            print("The sum of your addition problem is " + str(int(num1) + int(num2)))
+        elif operation == "2":  # PERFORM SUBTRACTION
+            num1 = input("Enter first number: ")
+            num2 = input("Enter second number: ")
+            print("The difference of your subtraction problem is " + str(int(num1) - int(num2)))
+        elif operation == "3":  # PERFORM MULTIPLICATION
+            num1 = input("Enter first number: ")
+            num2 = input("Enter second number: ")
+            print("The product of your multiplication problem is " + str(int(num1) * int(num2)))
+        elif operation == "4":  # PERFORM DIVISION
+            num1 = input("Enter first number: ")
+            num2 = input("Enter second number: ")
+            print("The result of your division problem is " + str(int(num1) / int(num2)))
+        elif operation == "5":  # Back to main menu
+            break
+        else:
+            print("Invalid Entry")
+
+        time.sleep(2)  # Add a short delay before displaying the menu again
+
+def algebra_operations():
+    while True:
+        print("Algebraic Operations:")
+        print("1. Y = MX + B")
+        print("2. Back to main menu")
+
+        operation = input("Enter your choice: ")
+
+        if operation == "1":  # Y = mx + b
+            m = int(input("Enter the value of m: "))
+            x = int(input("Enter the value of x: "))
+            b = int(input("Enter the value of b: "))
+            print(f"The value of y = {m}x + {b} is: {m * x + b}")
+        elif operation == "2":  # Back to main menu
+            break
+        else:
+            print("Invalid Entry")
+
+        time.sleep(2)  # Add a short delay before displaying the menu again
+
+def mathematical_operations():
+    while True:
+        print("Mathematical Operations:")
+        print("1. SQUARE ROOT")
+        print("2. POWER")
+        print("3. Back to main menu")
+
+        operation = input("Enter your choice: ")
+
+        if operation == "1":  # PERFORM SQUARE ROOT
+            num = int(input("Enter number: "))
+            print("The square root of your problem is %f" % (math.sqrt(num)))
+        elif operation == "2":  # PERFORM TO THE POWER OF
+            num = int(input("Enter first number: "))
+            num2 = int(input("Enter second number: "))
+            print("The result of your problem is %d" % (math.pow(num, num2)))
+        elif operation == "3":  # Back to main menu
+            break
+        else:
+            print("Invalid Entry")
+
+        time.sleep(2)  # Add a short delay before displaying the menu again
+def Triginometry_Operations():
+    while True:
+        print("Trigonometry Operations:")
+        print("1. Sine (sin)")
+        print("2. Cosine (cos)")
+        print("3. Tangent (tan)")
+        print("4. Inverse Sine (arcsin or asin)")
+        print("5. Inverse Cosine (arccos or acos)")
+        print("6. Inverse Tangent (arctan or atan)")
+        print("7. Cosecant (csc)")
+        print("8. Secant (sec)")
+        print("9. Cotangent (cot)")
+        print("10. Back to main menu")
+
+        operation = input("Enter your choice: ")
+
+        if operation == "1": 
+            angle = int(input("Enter angle in degrees: "))
+            print(f"The sine of {angle} degrees is {math.sin(math.radians(angle))}")
+        elif operation == "2":
+            angle = int(input("Enter angle in degrees: "))
+            print(f"The cosine of {angle} degrees is {math.cos(math.radians(angle))}")
+        elif operation == "3":
+            angle = int(input("Enter angle in degrees: "))
+            print(f"The tangent of {angle} degrees is {math.tan(math.radians(angle))}")
+        elif operation == "4":
+            angle = int(input("Enter angle in degrees: "))
+            print(f"The inverse sine of {angle} degrees is {math.degrees(math.asin(angle))}")
+        elif operation == "5":
+            angle = int(input("Enter angle in degrees: "))
+            print(f"The inverse cosine of {angle} degrees is {math.degrees(math.acos(angle))}")
+        elif operation == "6":
+            angle = int(input("Enter angle in degrees: "))
+            print(f"The inverse tangent of {angle} degrees is {math.degrees(math.atan(angle))}")
+        elif operation == "7":
+            angle = int(input("Enter angle in degrees: "))
+            print(f"The cosecant of {angle} degrees is {1 / math.sin(math.radians(angle))}")
+        elif operation == "8":
+            angle = int(input("Enter angle in degrees: "))
+            print(f"The secant of {angle} degrees is {1 / math.cos(math.radians(angle))}")
+        elif operation == "9":
+            angle = int(input("Enter angle in degrees: "))
+            print(f"The cotangent of {angle} degrees is {1 / math.tan(math.radians(angle))}")
+        elif operation == "10":
+            break 
+        else:
+            print("Invalid Entry")
+
+        time.sleep(2)
+
+# Main menu
 while True:
-    print("Select an operation to perform:")
-    print("1. ADD")
-    print("2. SUBTRACT")
-    print("3. MULTIPLY")
-    print("4. DIVIDE")
-    print("5. SQUARE ROOT")
-    print("6. POWER")
-    print("7. Y = MX + B")
-    print("8. EXIT")
+    print("Main Menu:")
+    print("1. Arithmetic Operations")
+    print("2. Algebraic Operations")
+    print("3. Mathematical Operations")
+    print("4. Triginometry_Operations")
+    print("5. EXIT")
 
-    operation = input("Enter your choice: ")
+    choice = input("Enter your choice: ")
 
-    if operation == "1":  # PERFORM ADDITION
-        num1 = input("Enter first number: ")
-        num2 = input("Enter second number: ")
-        print("The sum of your addition problem is " + str(int(num1) + int(num2)))
-    elif operation == "2":  # PERFORM SUBTRACTION
-        num1 = input("Enter first number: ")
-        num2 = input("Enter second number: ")
-        print("The difference of your subtraction problem is " + str(int(num1) - int(num2)))
-    elif operation == "3":  # PERFORM MULTIPLICATION
-        num1 = input("Enter first number: ")
-        num2 = input("Enter second number: ")
-        print("The product of your multiplication problem is " + str(int(num1) * int(num2)))
-    elif operation == "4":  # PERFORM DIVISION
-        num1 = input("Enter first number: ")
-        num2 = input("Enter second number: ")
-        print("The result of your division problem is " + str(int(num1) / int(num2)))
-    elif operation == "5":  # PERFORM SQUARE ROOT
-        num = int(input("Enter number: "))
-        print("The square root of your problem is %f" % (math.sqrt(num)))
-    elif operation == "6":  # PERFORM TO THE POWER OF
-        num = int(input("Enter first number: "))
-        num2 = int(input("Enter second number: "))
-        print("The result of your problem is %d" % (math.pow(num, num2)))
-    elif operation == "7":  # Y = mx + b
-        m = int(input("Enter the value of m: "))
-        x = int(input("Enter the value of x: "))
-        b = int(input("Enter the value of b: "))
-        print(f"The value of y = {m}x + {b} is: {m * x + b}")
-    elif operation == "8":  # EXIT
+    if choice == "1":
+        arithmetic_operations()
+    elif choice == "2":
+        algebra_operations()
+    elif choice == "3":
+        mathematical_operations()
+    elif choice == "4":
+        Triginometry_Operations()
+    elif choice == "5":
         print("Exiting the calculator...")
-        break  # Exit the loop
-
+        break
     else:
         print("Invalid Entry")
-
-    time.sleep(2)  # Add a short delay before displaying the menu again
