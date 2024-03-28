@@ -9,7 +9,8 @@ while True:
     print("4. DIVIDE")
     print("5. SQUARE ROOT")
     print("6. POWER")
-    print("7. EXIT")
+    print("7. Y = MX + B")
+    print("8. EXIT")
 
     operation = input("Enter your choice: ")
 
@@ -36,9 +37,15 @@ while True:
         num = int(input("Enter first number: "))
         num2 = int(input("Enter second number: "))
         print("The result of your problem is %d" % (math.pow(num, num2)))
-    elif operation == "7":  # EXIT
+    elif operation == "7":  # Y = mx + b
+        m = int(input("Enter the value of m: "))
+        x = int(input("Enter the value of x: "))
+        b = int(input("Enter the value of b: "))
+        print(f"The value of y = {m}x + {b} is: {m * x + b}")
+    elif operation == "8":  # EXIT
         print("Exiting the calculator...")
         break  # Exit the loop
+
     else:
         print("Invalid Entry")
 
