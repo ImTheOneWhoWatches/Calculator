@@ -1,12 +1,9 @@
 A simple Calculator
-No Gui (Yet, I might add it in a future project)
-![image](https://github.com/ImTheOneWhoWatches/Calculator/assets/162903308/d95bcad1-abaa-46eb-8348-75786548e747)
-
-
+![image](https://github.com/ImTheOneWhoWatches/Calculator/assets/162903308/2708ee86-8682-4a2a-ba41-0d41ca4ebcf7)
 
 
 How to Download
 ++++++++++++++++
-1. Download ZIP file
-2. Extract it
+1. Download the latest release
+2. Run the .bat file
 3. Run the .py file
