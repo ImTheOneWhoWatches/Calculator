@@ -5,6 +5,7 @@ A simple Calculator
 How to Download
 ++++++++++++++++
 0. Download python
+
 https://www.python.org/downloads/release/python-3106/
 1. Download the latest release
 2. Run the .bat file
